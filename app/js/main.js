@@ -1,5 +1,9 @@
 $(function () {
 
+$('.menu-btn').on('click', function(){
+  $('.menu').toggleClass('active');
+})
+
 $('.header__slider').slick({
     infinity: true,
     fade: true,
@@ -12,6 +16,12 @@ $('.slider-dotshead').slick({
     slidesToShow: 4,
     slidesToScroll: 4,
     asNavFor: '.header__slider',
+    responsive: [
+      {
+        breakpoint: 961,
+        settings: "unslick"
+      }
+    ]
 })
 
 $('.surf-slider').slick({
@@ -19,7 +29,37 @@ $('.surf-slider').slick({
     slidesToScroll: 1,
     prevArrow: '<button type="button" class="slider-arrows slider-arrows-left"><img src="images/arrow-left.svg" alt="arrow left"></button>',
     nextArrow: '<button type="button" class="slider-arrows slider-arrows-right"><img src="images/arrow-right.svg" alt="arrow right"></button>',
-    asNavFor: '.slider-map', 
+    asNavFor: '.slider-map',
+    centerMode: true,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1210,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 910,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        }
+      }
+    ] 
 })
 
 $('.slider-map').slick({
@@ -28,6 +68,28 @@ $('.slider-map').slick({
     arrows: false,
     asNavFor: '.surf-slider',
     focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1110,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+        }
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        }
+      },
+    ] 
 })
 
 $('.holder__slider, .shop__slider').slick({

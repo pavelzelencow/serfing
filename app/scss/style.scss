@@ -141,7 +141,7 @@
 .menu-btn{
     width: 60px;
     height: 60px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
@@ -270,9 +270,11 @@
 
 
 .surf-box{
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    &__wrapper{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     &__inner{
         min-height: 750px;
         background-color: rgba(#1c2121, .85);
@@ -329,7 +331,8 @@
     background-position: center center;
     margin: 0 auto;
     .slick-list{
-        min-height: 635px; 
+        min-height: 635px;
+        overflow: visible; 
     }
     .slick-current{
         .slider-dots__content{
@@ -399,6 +402,7 @@
     height: 23px;
     background-color: $green;
     border-radius: 50%;
+    box-shadow: 0px 0px 35px rgba(74, 246, 205, 0.83777);
 }
 
 .slider-dots__content{
@@ -409,6 +413,7 @@
    bottom: 35px;
    transform: translateX(-50%);
    z-index: 1;
+   pointer-events: none;
    &::before{
     content: '';
     width: 0;
@@ -418,7 +423,7 @@
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     bottom: -21px;
-    left: calc(50% + 0px );
+    left: calc(50% - 1px);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     }
@@ -439,7 +444,7 @@
 }
 .slider-dots--2{
     top: 270px;
-    left: 0;
+    left: -0.5px;
     .slider-dots__circle{
         position: relative;
         &::before{
